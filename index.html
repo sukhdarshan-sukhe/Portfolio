@@ -192,14 +192,14 @@ body {
 						for (let i = 0; i < text.length; i++) {
 							setTimeout(() => {
 							typingAnimationElement.textContent += text[i];
-							}, i * 200); // Increase the delay to slow down the typing animation
+							}, i * 50); // Increase the delay to slow down the typing animation
 						}
 
 						// Once the animation is complete, reset the text and start over
 						setTimeout(() => {
 							typingAnimationElement.textContent = '';
 							playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
-						}, text.length * 200);
+						}, text.length * 150);
 						}
 
 						// Start the typing animation loop
@@ -207,10 +207,7 @@ body {
 
 						</script>
 			            <p><b>An Electronics Engineer</b></p>
-						<!-- <h2 class="d-flex" style="margin-bottom: 0">With over 5 years of experience</h2> -->
-						<!-- <br> -->
-			            <!-- <p><a href="https://www.youtube.com/@RishabhMishraOfficial" class="btn btn-primary py-3 px-4">YouTube</a> -->
-							<a href="https://github.com/sukhdarshan-sukhe " target="_blank" class="btn btn btn-primary py-3 px-4">My works</a></p>
+							<a href="https://github.com/sukhdarshan-sukhe " target="_blank" class="btn btn btn-primary py-3 px-4" >My works</a></p>
 		            </div>
 		          </div>
 	        	</div>
@@ -469,8 +466,20 @@ body {
 			</div>
 		</div>
 
-	<br>
-	<br>
+		<div class="row">
+			<div class="container">
+				<div class="resume-wrap">
+					<span class="date">Updates</span>
+					<p> 
+						<ul>
+							<li>Creating Map and Publishing it to a topic.</li>
+							<li>Also publishing cordinates to the Robot to move. </li>
+						  </ul>
+					</p>
+				</div>
+			</div>
+		</div>
+	
 	<!--End of Dissertation  section -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
   
 	<!--Start of Resume section ------------------------------------------------------------------------------------------------------------------------>
