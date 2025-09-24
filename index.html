@@ -628,9 +628,14 @@
 
 			<div class="row">
 				<div class="container">
-					<div class="resume-wrap" style="padding:20px; border-radius:10px; box-shadow:0px 3px 10px rgba(0,0,0,0.1); margin-bottom:30px;">
+					<div class="resume-wrap" style="
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+                margin-bottom: 30px;
+              ">
 						<span class="date">Robotic Inversion for Adaptive Control</span>
-						<p style="margin-top:10px; line-height:1.6;" >
+						<p style="margin-top: 10px; line-height: 1.6">
 							Explores how fixed camera systems within a room can be leveraged
 							to generate real-time environment maps and guide mobile robots
 							by providing them with navigation goals. The project focuses on
@@ -638,7 +643,7 @@
 							external visual data sources
 						</p>
 
-						<ul style="margin-top:15px; padding-left:20px; line-height:1.7;">
+						<ul style="margin-top: 15px; padding-left: 20px; line-height: 1.7">
 							<li>
 								Capture visual data and construct a 2D/3D map of the
 								environment.
@@ -658,37 +663,70 @@
 
 			<div class="row">
 				<div class="container">
-					<div class="resume-wrap" style="padding:20px; border-radius:10px; box-shadow:0px 3px 10px rgba(0,0,0,0.1);">
+					<div class="resume-wrap" style="
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+              ">
 						<span class="date">Updates</span>
-						<ul style="margin-top:15px; padding-left:20px; line-height:1.7;">
-							<li>Created a map for the mobile robot to navigate the environment.</li>
-							<li>Able to navigate around the map using a user-interactive menu, allowing the user to
-								select various locations to move.</li>
-							<li>Implemented object detection using the YOLO World pre-trained model.</li>
-							<li>Simulated a CCTV environment by mounting a camera in the corner of the room, connected
-								to a Raspberry Pi, streaming over a TCP network. The IP address was then used to run the
-								object detection algorithm on a separate device.</li>
-							<li>Successfully detected objects and published their coordinates.</li>
-							<li>Published the mobile robot’s real-time coordinates, which can be used for obstacle
-								avoidance.</li>
-							<li>Calibrated homography using 4, 6, and 9 points; reduced error from ~2m to ~0.02m in some
-								areas, depending on object distance and visibility.</li>
-							<li>Tested detection consistency between camera-detected obstacles in the costmap and laser
-								scan readings, observing small offsets between the two.</li>
-							<li>Verified that objects which were once detected but are no longer present in the camera
-								frame may temporarily remain in the costmap as “ghost objects” because Nav2 stores the
-								detected object coordinates in a buffer until the map refreshes, after which they
-								disappear.</li>
-							<li>Tested Nav2 by driving the robot from Point A to Point B using a Nav2 goal; when I stood
-								in its path, both the camera and laser detected me as an obstacle, and Nav2 replanned
-								the path based on the object detected through the camera, as can be seen in this <a
-									href="#ros5-video" style="color: #008170; font-weight: bold;">Video </a>
+						<ul style="margin-top: 15px; padding-left: 20px; line-height: 1.7">
+							<li>
+								Created a map for the mobile robot to navigate the
+								environment.
 							</li>
-							<li>Confirmed Nav2 successfully replanned its path with a safe margin, carefully maneuvering
-								right or left to avoid collisions, and continued to the final destination.</li>
+							<li>
+								Able to navigate around the map using a user-interactive menu,
+								allowing the user to select various locations to move.
+							</li>
+							<li>
+								Implemented object detection using the YOLO World pre-trained
+								model.
+							</li>
+							<li>
+								Simulated a CCTV environment by mounting a camera in the
+								corner of the room, connected to a Raspberry Pi, streaming
+								over a TCP network. The IP address was then used to run the
+								object detection algorithm on a separate device.
+							</li>
+							<li>
+								Successfully detected objects and published their coordinates.
+							</li>
+							<li>
+								Published the mobile robot’s real-time coordinates, which can
+								be used for obstacle avoidance.
+							</li>
+							<li>
+								Calibrated homography using 4, 6, and 9 points; reduced error
+								from ~2m to ~0.02m in some areas, depending on object distance
+								and visibility.
+							</li>
+							<li>
+								Tested detection consistency between camera-detected obstacles
+								in the costmap and laser scan readings, observing small
+								offsets between the two.
+							</li>
+							<li>
+								Verified that objects which were once detected but are no
+								longer present in the camera frame may temporarily remain in
+								the costmap as “ghost objects” because Nav2 stores the
+								detected object coordinates in a buffer until the map
+								refreshes, after which they disappear.
+							</li>
+							<li>
+								Tested Nav2 by driving the robot from Point A to Point B using
+								a Nav2 goal; when I stood in its path, both the camera and
+								laser detected me as an obstacle, and Nav2 replanned the path
+								based on the object detected through the camera, as can be
+								seen in this
+								<a href="#ros5-video" style="color: #008170; font-weight: bold">Video
+								</a>
+							</li>
+							<li>
+								Confirmed Nav2 successfully replanned its path with a safe
+								margin, carefully maneuvering right or left to avoid
+								collisions, and continued to the final destination.
+							</li>
 						</ul>
-
-
 						<!-- Row 1: Two Images Side by Side -->
 						<div class="media-section-container" style="
                   display: flex;
@@ -696,7 +734,58 @@
                   flex-wrap: wrap;
                   justify-content: center;
                   margin-top: 15px;
-				  border: 1px solid #ccc; border-radius:10px;
+                  border: 1px solid #ccc;
+                  border-radius: 10px;
+                ">
+							<!-- Image 1 -->
+							<div class="media-section" style="flex: 1 1 300px; max-width: 470px; text-align: center">
+								<a href="images/Turtel_Bot_Pic_3.jpg" class="image-popup">
+									<img src="images/Turtel_Bot_Pic_3.jpg" alt="Calibration" style="
+                        width: 100%;
+                        height: auto;
+                        border-radius: 8px;
+                        display: block;
+                        margin-bottom: 5px;
+                      " />
+								</a>
+								<div style="
+                      font-size: 14px;
+                      font-weight: bold;
+                      text-align: justify;
+                    ">
+									This mobile robot is called the TurtleBot Create, which is primarily used for educational and research purposes in universities. It can be programmed using ROS2 (Robot Operating System 2), a widely adopted open-source framework that provides libraries and tools for building robot applications. ROS2 enables developers to handle navigation, perception, and control in a modular way, making it an excellent platform for experimentation. I used this robot for testing to evaluate whether my theoretical approach could be applied effectively in a practical environment. 
+								</div>
+							</div>
+
+							<!-- Image 2 -->
+							<div class="media-section" style="flex: 1 1 300px; max-width: 470px; text-align: center">
+								<a href="images/RP_Pi_4B.jpg" class="image-popup">
+									<img src="images/RP_Pi_4B.jpg" alt="Getting Coordinates" style="
+                        width: 100%;
+                        height: auto;
+                        border-radius: 8px;
+                        display: block;
+                        margin-bottom: 5px;
+                      " />
+								</a>
+								<div style="
+                      font-size: 14px;
+                      font-weight: bold;
+                      text-align: justify;
+                    ">
+									For simulating a CCTV environment, I used a webcam connected to a Raspberry Pi 4B. The Raspberry Pi acted as the edge device, capturing the video stream and running a Python script that broadcast the feed over an IP address using a TCP stream. This video stream was accessible only within the local network. My main device, the TurtleBot, subscribed to this stream to run the object detection algorithm and publish any detected objects to a ROS2 topic.
+								</div>
+							</div>
+						</div>
+						<!-- Row 2: Two Images Side by Side -->
+						<div class="media-section-container" style="
+                  display: flex;
+                  gap: 15px;
+                  flex-wrap: wrap;
+                  justify-content: center;
+                  margin-top: 15px;
+                  border: 1px solid #ccc;
+                  border-radius: 10px;
                 ">
 							<!-- Image 1 -->
 							<div class="media-section" style="flex: 1 1 300px; max-width: 500px; text-align: center">
@@ -747,14 +836,15 @@
 							</div>
 						</div>
 
-						<!-- Row 2: Video + Text Side by Side -->
+						<!-- Row 3: Video + Text Side by Side -->
 						<div class="media-section-container" style="
                   display: flex;
                   gap: 15px;
                   flex-wrap: wrap;
                   justify-content: center;
                   margin-top: 20px;
-				  border:1.5px solid #ccc; border-radius:10px;
+                  border: 1.5px solid #ccc;
+                  border-radius: 10px;
                 ">
 							<!-- Video -->
 							<div class="media-section" style="flex: 1 1 300px; max-width: 500px; text-align: center">
@@ -795,15 +885,15 @@
 								</div>
 							</div>
 						</div>
-
-						<!-- Row 3: Two Images Side by Side -->
+						<!-- Row 4: Two Images Side by Side -->
 						<div class="media-section-container" style="
                   display: flex;
                   gap: 15px;
                   flex-wrap: wrap;
                   justify-content: center;
                   margin-top: 15px;
-				  border:1.5px solid #ccc; border-radius:10px;
+                  border: 1.5px solid #ccc;
+                  border-radius: 10px;
                 ">
 							<!-- Image 1 -->
 							<div class="media-section" style="flex: 1 1 300px; max-width: 500px; text-align: center">
@@ -821,10 +911,11 @@
                       font-weight: bold;
                       text-align: justify;
                     ">
-									In this image, we can see the camera output alongside the RViz visualizer. In RViz,
-									the map of the room is displayed with two black dots. These two dots represent the
-									positions of the detected objects, which were identified using the camera and
-									published as coordinates to the map frame.
+									In this image, we can see the camera output alongside the
+									RViz visualizer. In RViz, the map of the room is displayed
+									with two black dots. These two dots represent the positions
+									of the detected objects, which were identified using the
+									camera and published as coordinates to the map frame.
 								</div>
 							</div>
 
@@ -844,24 +935,26 @@
                       font-weight: bold;
                       text-align: justify;
                     ">
-									In this image, a small white circle marked with a blue arrow shows the object
-									detected and displayed in real time using the camera, then published to the map
-									frame. Alongside this circle, there are also several smaller circles that I refer to
-									as "ghost objects." These appear when the camera had previously detected an obstacle
-									and marked it as an object, but it is either no longer present in the environment or
-									is continuously moving.
+									In this image, a small white circle marked with a blue arrow
+									shows the object detected and displayed in real time using
+									the camera, then published to the map frame. Alongside this
+									circle, there are also several smaller circles that I refer
+									to as "ghost objects." These appear when the camera had
+									previously detected an obstacle and marked it as an object,
+									but it is either no longer present in the environment or is
+									continuously moving.
 								</div>
 							</div>
 						</div>
-
-						<!-- Row 4: Video + Text Side by Side -->
+						<!-- Row 5: Video + Text Side by Side -->
 						<div class="media-section-container" style="
                   display: flex;
                   gap: 15px;
                   flex-wrap: wrap;
                   justify-content: center;
                   margin-top: 20px;
-				  border:1.5px solid #ccc; border-radius:10px;
+                  border: 1.5px solid #ccc;
+                  border-radius: 10px;
                 ">
 							<!-- Video -->
 							<div class="media-section" style="flex: 1 1 300px; max-width: 500px; text-align: center">
@@ -884,28 +977,32 @@
                       font-weight: bold;
                       word-wrap: break-word;
                     ">
-									In this video, I was testing the difference between the coordinates of detected
-									objects by comparing the camera-detected obstacles in the costmap with the laser
-									scan. I began with 4 map frame coordinates and 4 camera frame pixels to create the
-									homography file, which gave an error of about 2 meters. Increasing the calibration
-									points to 6 reduced the error to 1 meter, and with 9 points the error dropped
-									significantly to around 0.02 meters in some areas. When the object is close to the
-									camera and partially visible, the error is small, but when it is far away and only
-									half visible, the error can increase up to 2 meters. The error also rises if the
-									mobile robot’s localization is slightly misaligned with the map. In the costmap, I
-									am marked as a red circle for reference.
+									In this video, I was testing the difference between the
+									coordinates of detected objects by comparing the
+									camera-detected obstacles in the costmap with the laser
+									scan. I began with 4 map frame coordinates and 4 camera
+									frame pixels to create the homography file, which gave an
+									error of about 2 meters. Increasing the calibration points
+									to 6 reduced the error to 1 meter, and with 9 points the
+									error dropped significantly to around 0.02 meters in some
+									areas. When the object is close to the camera and partially
+									visible, the error is small, but when it is far away and
+									only half visible, the error can increase up to 2 meters.
+									The error also rises if the mobile robot’s localization is
+									slightly misaligned with the map. In the costmap, I am
+									marked as a red circle for reference.
 								</div>
 							</div>
 						</div>
-
-						<!-- Row 5: Video + Text Side by Side -->
+						<!-- Row 6: Video + Text Side by Side -->
 						<div class="media-section-container" id="ros5-video" style="
                   display: flex;
                   gap: 15px;
                   flex-wrap: wrap;
                   justify-content: center;
                   margin-top: 20px;
-				  border:1.5px solid #ccc; border-radius:10px;
+                  border: 1.5px solid #ccc;
+                  border-radius: 10px;
                 ">
 							<!-- Video -->
 							<div class="media-section" style="flex: 1 1 300px; max-width: 500px; text-align: center">
@@ -922,22 +1019,95 @@
 							</div>
 
 							<!-- Text -->
-							<div class="media-section" style="flex: 1 1 300px; max-width: 500px; text-align: justify; ">
+							<div class="media-section" style="flex: 1 1 300px; max-width: 500px; text-align: justify">
 								<div style="
                       font-size: 14px;
                       font-weight: bold;
                       word-wrap: break-word;
                     ">
-									In this test, I wanted to check whether a detected object is only visible in the
-									costmap or also recognized by the mobile robot for navigation. After trying a few
-									locations, I drove the robot from Point A to Point B using a Nav2 goal to see if it
-									would replan when a person appeared between waypoints. To test this, I stood in the
-									path while both the laser and camera updated the map with obstacles, showing a small
-									offset between their detections. The camera marked me as an object and published my
-									position, so I appeared in the costmap. As the robot approached, Nav2 replanned its
-									path with a safe margin, carefully maneuvering right or left to avoid me, and then
-									successfully continued on to the final destination. I am marked as a red circle for
-									reference.
+									In this test, I wanted to check whether a detected object is
+									only visible in the costmap or also recognized by the mobile
+									robot for navigation. After trying a few locations, I drove
+									the robot from Point A to Point B using a Nav2 goal to see
+									if it would replan when a person appeared between waypoints.
+									To test this, I stood in the path while both the laser and
+									camera updated the map with obstacles, showing a small
+									offset between their detections. The camera marked me as an
+									object and published my position, so I appeared in the
+									costmap. As the robot approached, Nav2 replanned its path
+									with a safe margin, carefully maneuvering right or left to
+									avoid me, and then successfully continued on to the final
+									destination. I am marked as a red circle for reference.
+								</div>
+							</div>
+						</div>
+						<!-- Row 7: Video + Text Side by Side -->
+						<div class="media-section-container" id="ros5-video" style="
+                  display: flex;
+                  gap: 15px;
+                  flex-wrap: wrap;
+                  justify-content: center;
+                  margin-top: 20px;
+                  border: 1.5px solid #ccc;
+                  border-radius: 10px;
+                ">
+							<!-- Video -->
+							<div class="media-section" style="flex: 1 1 300px; max-width: 500px; text-align: center">
+								<video controls muted autoplay loop style="
+                      width: 100%;
+                      height: auto;
+                      border-radius: 8px;
+                      display: block;
+                      margin-top: 8px;
+                    ">
+									<source src="video/Video3.mp4" type="video/mp4" />
+									Your browser does not support the video tag.
+								</video>
+							</div>
+
+							<!-- Text -->
+							<div class="media-section" style="flex: 1 1 300px; max-width: 500px; text-align: justify">
+								<div style="
+                      font-size: 14px;
+                      font-weight: bold;
+                      word-wrap: break-word;
+                    ">
+									In this test, I attempted to navigate the mobile robot from Point A to Point B without using LiDAR, relying on the camera-detected objects. I created a script that subscribed to the topic providing the planned path coordinates, which could also be visualized in RViz. To test path replanning, I stood in the robot’s path to see whether Nav2 would generate a new path. It successfully replanned; however, the robot did not follow the updated path correctly due to a malfunction that prevented it from moving in reverse. Additionally, I tested how Nav2 handles “ghost locations” that remain in its buffer. By sending Nav2 an empty location string, I observed that it took around 10–12 seconds for the ghost locations to clear. Once cleared, Nav2 generated a new path and the robot successfully reached the target location.
+								</div>
+							</div>
+						</div>
+						<!-- Row 8: Video + Text Side by Side -->
+						<div class="media-section-container" id="ros5-video" style="
+                  display: flex;
+                  gap: 15px;
+                  flex-wrap: wrap;
+                  justify-content: center;
+                  margin-top: 20px;
+                  border: 1.5px solid #ccc;
+                  border-radius: 10px;
+                ">
+							<!-- Video -->
+							<div class="media-section" style="flex: 1 1 300px; max-width: 500px; text-align: center">
+								<video controls muted autoplay loop style="
+                      width: 100%;
+                      height: auto;
+                      border-radius: 8px;
+                      display: block;
+                      margin-top: 8px;
+                    ">
+									<source src="video/Video4.mp4" type="video/mp4" />
+									Your browser does not support the video tag.
+								</video>
+							</div>
+
+							<!-- Text -->
+							<div class="media-section" style="flex: 1 1 300px; max-width: 500px; text-align: justify">
+								<div style="
+                      font-size: 14px;
+                      font-weight: bold;
+                      word-wrap: break-word;
+                    ">
+									In this test, I repeated the experiment to verify whether the previous result was just coincidence or consistently reproducible. Once again, I was detected and marked as a moving object, with my position continuously updated in both the global map and the costmap. This time, I also experimented with a different approach to clearing the costmap by storing the detected object’s coordinates and checking whether they were still visible in the camera frame. If the object was no longer in the frame, the coordinates were cleared. This method worked in some cases, and the robot successfully avoided me twice by replanning and generating a different path.
 								</div>
 							</div>
 						</div>
@@ -1218,7 +1388,7 @@
 		</svg>
 	</div>
 	<script>
-		document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+		document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 			anchor.addEventListener("click", function (e) {
 				const target = document.querySelector(this.getAttribute("href"));
 				if (target) {
