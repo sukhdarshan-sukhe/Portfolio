@@ -753,7 +753,16 @@
                       font-weight: bold;
                       text-align: justify;
                     ">
-									This mobile robot is called the TurtleBot Create, which is primarily used for educational and research purposes in universities. It can be programmed using ROS2 (Robot Operating System 2), a widely adopted open-source framework that provides libraries and tools for building robot applications. ROS2 enables developers to handle navigation, perception, and control in a modular way, making it an excellent platform for experimentation. I used this robot for testing to evaluate whether my theoretical approach could be applied effectively in a practical environment. 
+									This mobile robot is called the TurtleBot Create, which is
+									primarily used for educational and research purposes in
+									universities. It can be programmed using ROS2 (Robot
+									Operating System 2), a widely adopted open-source framework
+									that provides libraries and tools for building robot
+									applications. ROS2 enables developers to handle navigation,
+									perception, and control in a modular way, making it an
+									excellent platform for experimentation. I used this robot
+									for testing to evaluate whether my theoretical approach
+									could be applied effectively in a practical environment.
 								</div>
 							</div>
 
@@ -773,7 +782,14 @@
                       font-weight: bold;
                       text-align: justify;
                     ">
-									For simulating a CCTV environment, I used a webcam connected to a Raspberry Pi 4B. The Raspberry Pi acted as the edge device, capturing the video stream and running a Python script that broadcast the feed over an IP address using a TCP stream. This video stream was accessible only within the local network. My main device, the TurtleBot, subscribed to this stream to run the object detection algorithm and publish any detected objects to a ROS2 topic.
+									For simulating a CCTV environment, I used a webcam connected
+									to a Raspberry Pi 4B. The Raspberry Pi acted as the edge
+									device, capturing the video stream and running a Python
+									script that broadcast the feed over an IP address using a
+									TCP stream. This video stream was accessible only within the
+									local network. My main device, the TurtleBot, subscribed to
+									this stream to run the object detection algorithm and
+									publish any detected objects to a ROS2 topic.
 								</div>
 							</div>
 						</div>
@@ -1072,7 +1088,20 @@
                       font-weight: bold;
                       word-wrap: break-word;
                     ">
-									In this test, I attempted to navigate the mobile robot from Point A to Point B without using LiDAR, relying on the camera-detected objects. I created a script that subscribed to the topic providing the planned path coordinates, which could also be visualized in RViz. To test path replanning, I stood in the robot’s path to see whether Nav2 would generate a new path. It successfully replanned; however, the robot did not follow the updated path correctly due to a malfunction that prevented it from moving in reverse. Additionally, I tested how Nav2 handles “ghost locations” that remain in its buffer. By sending Nav2 an empty location string, I observed that it took around 10–12 seconds for the ghost locations to clear. Once cleared, Nav2 generated a new path and the robot successfully reached the target location.
+									In this test, I attempted to navigate the mobile robot from
+									Point A to Point B without using LiDAR, relying on the
+									camera-detected objects. I created a script that subscribed
+									to the topic providing the planned path coordinates, which
+									could also be visualized in RViz. To test path replanning, I
+									stood in the robot’s path to see whether Nav2 would generate
+									a new path. It successfully replanned; however, the robot
+									did not follow the updated path correctly due to a
+									malfunction that prevented it from moving in reverse.
+									Additionally, I tested how Nav2 handles “ghost locations”
+									that remain in its buffer. By sending Nav2 an empty location
+									string, I observed that it took around 10–12 seconds for the
+									ghost locations to clear. Once cleared, Nav2 generated a new
+									path and the robot successfully reached the target location.
 								</div>
 							</div>
 						</div>
@@ -1107,7 +1136,18 @@
                       font-weight: bold;
                       word-wrap: break-word;
                     ">
-									In this test, I repeated the experiment to verify whether the previous result was just coincidence or consistently reproducible. Once again, I was detected and marked as a moving object, with my position continuously updated in both the global map and the costmap. This time, I also experimented with a different approach to clearing the costmap by storing the detected object’s coordinates and checking whether they were still visible in the camera frame. If the object was no longer in the frame, the coordinates were cleared. This method worked in some cases, and the robot successfully avoided me twice by replanning and generating a different path.
+									In this test, I repeated the experiment to verify whether
+									the previous result was just coincidence or consistently
+									reproducible. Once again, I was detected and marked as a
+									moving object, with my position continuously updated in both
+									the global map and the costmap. This time, I also
+									experimented with a different approach to clearing the
+									costmap by storing the detected object’s coordinates and
+									checking whether they were still visible in the camera
+									frame. If the object was no longer in the frame, the
+									coordinates were cleared. This method worked in some cases,
+									and the robot successfully avoided me twice by replanning
+									and generating a different path.
 								</div>
 							</div>
 						</div>
