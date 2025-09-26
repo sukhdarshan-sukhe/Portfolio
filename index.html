@@ -726,6 +726,12 @@
 								margin, carefully maneuvering right or left to avoid
 								collisions, and continued to the final destination.
 							</li>
+							<li>
+								“Successfully demonstrated autonomous navigation driven solely by a CCTV camera,
+								eliminating the need for other onboard sensors. Click here
+								<a href="#Final_video" style="color: #008170; font-weight: bold">here
+								</a>to view the demo video.
+							</li>
 						</ul>
 						<!-- Row 1: Two Images Side by Side -->
 						<div class="media-section-container" style="
@@ -1058,7 +1064,7 @@
 							</div>
 						</div>
 						<!-- Row 7: Video + Text Side by Side -->
-						<div class="media-section-container" id="ros5-video" style="
+						<div class="media-section-container" style="
                   display: flex;
                   gap: 15px;
                   flex-wrap: wrap;
@@ -1106,7 +1112,7 @@
 							</div>
 						</div>
 						<!-- Row 8: Video + Text Side by Side -->
-						<div class="media-section-container" id="ros5-video" style="
+						<div class="media-section-container" style="
                   display: flex;
                   gap: 15px;
                   flex-wrap: wrap;
@@ -1148,6 +1154,86 @@
 									coordinates were cleared. This method worked in some cases,
 									and the robot successfully avoided me twice by replanning
 									and generating a different path.
+								</div>
+							</div>
+						</div>
+						<!-- Row 9: Video + Text Side by Side -->
+						<div class="media-section-container" style="
+                  display: flex;
+                  gap: 15px;
+                  flex-wrap: wrap;
+                  justify-content: center;
+                  margin-top: 20px;
+                  border: 1.5px solid #ccc;
+                  border-radius: 10px;
+                ">
+							<!-- Video -->
+							<div class="media-section" style="flex: 1 1 300px; max-width: 500px; text-align: center">
+								<a href="images/Flow_Chart.jpg" class="image-popup">
+									<img src="images/Flow_Chart.jpg" alt="Getting Coordinates" style="
+                        width: 100%;
+                        height: auto;
+                        border-radius: 8px;
+                        display: block;
+                        margin-bottom: 5px;
+                      " />
+								</a>
+							</div>
+
+							<!-- Text -->
+							<div class="media-section" style="flex: 1 1 300px; max-width: 500px; text-align: justify">
+								<div style="
+                      font-size: 14px;
+                      font-weight: bold;
+                      word-wrap: break-word;
+                    ">
+									This flow diagram shows the complete pipeline of the project: Camera (CCTV) →
+									Raspberry Pi (TCP stream) → YOLO detection → Publish obstacles → Nav2 consumes
+									obstacles → TurtleBot3 replans path → Robot navigates safely. This flow diagram
+									explains how the Robotic Inversion system works from start to finish. The VF090
+									camera streams video through a Raspberry Pi 4B over TCP, which is processed by a
+									YOLO detection node to identify obstacles. Detected objects are converted into map
+									coordinates and published on the /camera/obstacles topic. Nav2 and RViz2
+									subscribes to this topic, updating the costmap in real time. The TurtleBot3 then
+									navigates to its goal using predefined or user-selected coordinates. If an obstacle
+									is detected in its planned path, Nav2 replans a new route around it; otherwise, the
+									robot continues to follow the original path until the destination is reached,
+									providing feedback on success.
+								</div>
+							</div>
+						</div>
+						<!-- Row 10: Video + Text Side by Side -->
+						<div class="media-section-container" id="Final_video" style="
+                  display: flex;
+                  gap: 15px;
+                  flex-wrap: wrap;
+                  justify-content: center;
+                  margin-top: 20px;
+                  border: 1.5px solid #ccc;
+                  border-radius: 10px;
+                ">
+							<!-- Video -->
+							<div class="media-section" style="flex: 1 1 300px; max-width: 500px; text-align: center">
+								<video controls muted autoplay loop style="
+                      width: 100%;
+                      height: auto;
+                      border-radius: 8px;
+                      display: block;
+                      margin-top: 8px;
+                    ">
+									<source src="video/Final_Video.mp4" type="video/mp4" />
+									Your browser does not support the video tag.
+								</video>
+							</div>
+
+							<!-- Text -->
+							<div class="media-section" style="flex: 1 1 300px; max-width: 500px; text-align: justify">
+								<div style="
+                      font-size: 14px;
+                      font-weight: bold;
+                      word-wrap: break-word;
+                    ">
+									This is the final video demo video of the completed project.
 								</div>
 							</div>
 						</div>
