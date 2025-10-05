@@ -2,32 +2,35 @@
 <html lang="en">
 
 <head>
-	<title>Sukhdarshan Vinayak</title>
-	<link rel="icon" type="image/x-icon" href="images/Icon.png" />
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<meta name="description"
+		content="Portfolio of Sukhdarshan Vinayak - Electronics Engineer, Robotics Enthusiast, and IoT Developer." />
+	<title>Sukhdarshan Vinayak</title>
+	<link rel="icon" type="image/x-icon" href="images/Icon.png" />
 
+	<!-- Google Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
 
+	<!-- CSS Libraries --->
 	<link rel="stylesheet" href="css/open-iconic-bootstrap.min.css" />
 	<link rel="stylesheet" href="css/animate.css" />
-
 	<link rel="stylesheet" href="css/owl.carousel.min.css" />
 	<link rel="stylesheet" href="css/owl.theme.default.min.css" />
 	<link rel="stylesheet" href="css/magnific-popup.css" />
-
 	<link rel="stylesheet" href="css/aos.css" />
-
 	<link rel="stylesheet" href="css/ionicons.min.css" />
-
 	<link rel="stylesheet" href="css/flaticon.css" />
 	<link rel="stylesheet" href="css/icomoon.css" />
 	<link rel="stylesheet" href="css/style.css" />
 
 	<style>
-		/*======================================
-//--//-->   ABOUT
-======================================*/
+		html,
+		body {
+			margin: 0;
+			padding: 0 0 40px 0;
+			overflow-x: hidden;
+		}
 
 		.about-mf .box-shadow-full {
 			padding-top: 4rem;
@@ -74,12 +77,12 @@
 		/* Animation styles */
 		#typing-animation {
 			position: relative;
-			font-size: 30px;
+			font-size: 28px;
 			font-weight: bold;
 			color: rgb(255, 255, 255);
 			overflow: hidden;
 			white-space: nowrap;
-			animation: typing 3s steps(20, end) infinite;
+			border-right: 2px solid #fff;
 		}
 
 		#typing-animation:before {
@@ -116,6 +119,7 @@
 		body {
 			background-image: url("images/.jpeg");
 			background-size: 100% 100%;
+			background-attachment: fixed;
 		}
 
 		/* project image zoom effect */
@@ -126,7 +130,7 @@
 		}
 
 		.zoom-effect:hover {
-			transform: scale(1.1);
+			transform: scale(1.08);
 		}
 	</style>
 </head>
@@ -168,260 +172,248 @@
 	</nav>
 
 	<!-- Start of Home Section -->
-	<div class="home-slider owl-carousel">
+	<div class="home-slider owl-carousel" id="home-section">
 		<div class="slider-item">
 			<div class="overlay"></div>
 			<div class="container">
-				<div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end"
-					data-scrollax-parent="true">
-					<div class="one-third js-fullheight order-md-last img" style="background-image: url()">
-						<div class="overlay"></div>
-					</div>
-					<div class="one-forth d-flex align-items-center ftco-animate"
-						data-scrollax=" properties: { translateY: '70%' }">
-						<!-- <img src="images/image.jpeg" alt="Tracks"> -->
-						<div class="text" class="elementcenter">
-							<span class="subheading">Hello!</span>
-							<h1 class="mb-4 mt-3">I'm <span>Sukhdarshan Vinayak</span></h1>
-
-							<!-- Element to contain animated typing -->
-							<span id="typing-animation"></span>
-
-							<script>
-								// Initialize the typing animation
-								const typingAnimationElement =
-									document.getElementById("typing-animation");
-
-								// Create an array of typing text
-								const typingTexts = [
-									"An Electronics Engineer  ",
-									"A Martial Artist  ",
-									"A Yoga Instructor 	",
-									"A Gamer ",
-								];
-
-								// Create a function to display the typing animation for a given text
-								function playTypingAnimation(text) {
-									// Loop through each character and add it to the element
-									for (let i = 0; i < text.length; i++) {
-										setTimeout(() => {
-											typingAnimationElement.textContent += text[i];
-										}, i * 50); // Increase the delay to slow down the typing animation
-									}
-
-									// Once the animation is complete, reset the text and start over
-									setTimeout(() => {
-										typingAnimationElement.textContent = "";
-										playTypingAnimation(
-											typingTexts[
-											(typingTexts.indexOf(text) + 1) % typingTexts.length
-											]
-										);
-									}, text.length * 150);
-								}
-
-								// Start the typing animation loop
-								playTypingAnimation(typingTexts[0]);
-							</script>
-							<p>
-								<b>An Electronics Engineer</b>
-								<a href="https://github.com/sukhdarshan-sukhe " target="_blank"
-									class="btn btn btn-primary py-3 px-4">My works</a>
-							</p>
-						</div>
+				<div class="row d-md-flex no-gutters slider-text align-items-center justify-content-center">
+					<div class="col-md-8 text-center ftco-animate">
+						<span class="subheading">Hello!</span>
+						<h1 class="mb-4 mt-3">I'm <span>Sukhdarshan Vinayak</span></h1>
+						<span id="typing-animation"></span>
+						<p class="text-center">
+							<br />
+							<a href="https://github.com/sukhdarshan-sukhe" target="_blank"
+								class="btn btn-primary py-3 px-4">My works</a>
+						</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 
+	<!-- Typing Animation -->
+	<script>
+		document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+			anchor.addEventListener("click", function (e) {
+				const target = document.querySelector(this.getAttribute("href"));
+				if (target) {
+					e.preventDefault();
+					target.scrollIntoView({ behavior: "smooth" });
+					target.classList.add("highlight");
+					setTimeout(() => target.classList.remove("highlight"), 2000);
+				}
+			});
+		});
+
+		// Typing Animation
+		const typingElement = document.getElementById("typing-animation");
+		const texts = [
+			"Electronics Engineer",
+			"Martial Artist",
+			"Yoga Instructor",
+			"Gamer",
+		];
+		let index = 0;
+
+		async function typeEffect(text) {
+			for (let i = 0; i < text.length; i++) {
+				typingElement.textContent = text.substring(0, i + 1);
+				await new Promise((res) => setTimeout(res, 100));
+			}
+			await new Promise((res) => setTimeout(res, 1000));
+			for (let i = text.length; i >= 0; i--) {
+				typingElement.textContent = text.substring(0, i);
+				await new Promise((res) => setTimeout(res, 50));
+			}
+			index = (index + 1) % texts.length;
+			typeEffect(texts[index]);
+		}
+
+		typeEffect(texts[index]);
+	</script>
 	<!-- End of Home Section -->
 
 	<!-- Start of About me section ---------------------------------------------------------------------------->
+	<!-- About Section -->
 	<section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
 		<div class="container">
-			<div class="row">
-				<div class="row d-flex align-items-stretch">
-					<!-- <div class="row d-flex"> -->
-					<div class="col-md-6 col-lg-5 d-flex">
-						<div class="img-about img d-flex align-items-stretch">
-							<div class="overlay">
-								<div class="row">
-									<div class="col-sm-6 col-md-5">
-										<div class="about-img">
-											<img src="images/Circle_image.png" class="img-fluid rounded b-shadow-a"
-												alt="" />
-										</div>
-									</div>
-									<!-- Details next to profile image -->
-									<div class="col-sm-6 col-md-7">
-										<div class="about-info">
-											<p>
-												<span class="title-s">Name: </span>
-												<span>Sukhdarshan Vinayak</span>
-											</p>
-											<p>
-												<span class="title-s">Job Role: </span>
-												<span>Electronic Engineer</span>
-											</p>
-
-											<p>
-												<span class="title-s">Experience: </span>
-												<span>3 Years</span>
-											</p>
-											<p>
-												<span class="title-s">Address: </span>
-												<span>London, UK</span>
-											</p>
-										</div>
+			<div class="row d-flex align-items-stretch">
+				<!-- Profile Image + Skills -->
+				<div class="col-md-6 col-lg-5 d-flex">
+					<div class="img-about img d-flex align-items-stretch">
+						<div class="overlay p-3">
+							<!-- Profile Image + Details -->
+							<div class="row">
+								<div class="col-sm-6 col-md-5">
+									<div class="about-img">
+										<img src="images/Circle_image.png" class="img-fluid rounded b-shadow-a"
+											alt="Profile Picture" />
 									</div>
 								</div>
-								<br />
-								<br />
-								<br />
-
-								<div class="skill-mf">
-									<p class="title-s">
-										Skills <span>Schematic Capture</span>
-										<span class="pull-right">95%</span>
-									</p>
-
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 95%"
-											aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+								<div class="col-sm-6 col-md-7">
+									<div class="about-info">
+										<p>
+											<span class="title-s">Name:</span>
+											<span>Sukhdarshan Vinayak</span>
+										</p>
+										<p>
+											<span class="title-s">Job Role:</span>
+											<span>Electronics Engineer</span>
+										</p>
+										<p>
+											<span class="title-s">Experience:</span>
+											<span>3 Years</span>
+										</p>
+										<p>
+											<span class="title-s">Address:</span>
+											<span>London, UK</span>
+										</p>
 									</div>
+								</div>
+							</div>
 
-									<span>Layout Desgine</span>
-									<span class="pull-right">85%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 85%"
-											aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-									</div>
+							<!-- Skills -->
+							<div class="skill-mf mt-4">
+								<p class="title-s">Skills</p>
 
-									<span>PCB Desgine</span> <span class="pull-right">70%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 90%"
-											aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
-									</div>
+								<span>Schematic Capture</span>
+								<span class="pull-right">95%</span>
+								<div class="progress">
+									<div class="progress-bar" role="progressbar" style="width: 95%" aria-valuenow="95"
+										aria-valuemin="0" aria-valuemax="100"></div>
+								</div>
 
-									<span>Component Selection</span>
-									<span class="pull-right">85%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 85%"
-											aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-									</div>
+								<span>Layout Design</span>
+								<span class="pull-right">85%</span>
+								<div class="progress">
+									<div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85"
+										aria-valuemin="0" aria-valuemax="100"></div>
+								</div>
 
-									<span>SMT and Through hole Soldering</span>
-									<span class="pull-right">80%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 80%"
-											aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-									</div>
-									<span>Footprint Creation</span>
-									<span class="pull-right">90%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 80%"
-											aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-									</div>
+								<span>PCB Design</span>
+								<span class="pull-right">90%</span>
+								<div class="progress">
+									<div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90"
+										aria-valuemin="0" aria-valuemax="100"></div>
+								</div>
+
+								<span>Component Selection</span>
+								<span class="pull-right">85%</span>
+								<div class="progress">
+									<div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85"
+										aria-valuemin="0" aria-valuemax="100"></div>
+								</div>
+
+								<span>SMT & Through-hole Soldering</span>
+								<span class="pull-right">80%</span>
+								<div class="progress">
+									<div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80"
+										aria-valuemin="0" aria-valuemax="100"></div>
+								</div>
+
+								<span>Footprint Creation</span>
+								<span class="pull-right">90%</span>
+								<div class="progress">
+									<div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90"
+										aria-valuemin="0" aria-valuemax="100"></div>
 								</div>
 							</div>
 						</div>
 					</div>
+				</div>
 
-					<div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
-						<div class="row justify-content-start pb-3">
-							<div class="col-md-12 heading-section ftco-animate">
-								<h1 class="big">About</h1>
-								<h2 class="mb-4">About Me</h2>
+				<!-- About Me Text -->
+				<div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
+					<div class="row justify-content-start pb-3">
+						<div class="col-md-12 heading-section ftco-animate">
+							<h1 class="big">About</h1>
+							<h2 class="mb-4">About Me</h2>
+							<p>
+								Electronics Engineer with 3 years of experience in embedded
+								systems, IoT, and PCB design, along with 1 year in robotics
+								integration. Holding a Bachelor’s degree in Electronics and
+								Communication Engineering, I am proficient in schematic
+								capture, hardware testing, troubleshooting, and IoT solutions.
+								Demonstrated success in leading impactful projects, ensuring
+								quality assurance, and managing end-to-end hardware–software
+								integration with sensors, actuators, motor control, and
+								multi-device automation.
+							</p>
 
-								<p>
-									Electronics Engineer with 3 years of experience in embedded
-									systems, IoT, and PCB design, along with 1 year in robotics
-									integration. Holding a Bachelor’s degree in Electronics and
-									Communication Engineering, I am proficient in schematic
-									capture, hardware testing, troubleshooting, and IoT
-									solutions. Demonstrated success in leading impactful
-									projects, ensuring quality assurance, and managing
-									end-to-end hardware–software integration with sensors,
-									actuators, motor control, and multi-device automation..
-								</p>
-
-								<ul class="about-info mt-4 px-md-0 px-2">
-									<li class="d-flex">
-										<span>Profile:</span>
-										<span>Electronics &amp; Engineer</span>
-									</li>
-									<li class="d-flex">
-										<span>Domain:</span>
-										<span>Electronic Industry, IOT &amp; Hardware</span>
-									</li>
-									<li class="d-flex">
-										<span>Education:</span>
-										<span>Bachelor of Engineering</span>
-									</li>
-									<li class="d-flex">
-										<span>Language:</span>
-										<span>English, Hindi &amp; Punjabi</span>
-									</li>
-									<li class="d-flex">
-										<span>EDA Tools:</span>
-										<span>Ki Cad, Altium Designer, Easy Eda &amp; Proteus</span>
-									</li>
-									<li class="d-flex">
-										<span>Other Skills:</span>
-										<span>Autodesk Fusion360, Git, Technical Documentation, &amp;
-											Project Management.
-										</span>
-									</li>
-									<li class="d-flex">
-										<span>Interest:</span>
-										<span>Traveling, Travel Photography, Bike Riding</span>
-									</li>
-								</ul>
-							</div>
+							<ul class="about-info mt-4 px-md-0 px-2">
+								<li class="d-flex">
+									<span>Profile:</span> <span>Electronics Engineer</span>
+								</li>
+								<li class="d-flex">
+									<span>Domain:</span>
+									<span>Electronics, IoT & Hardware</span>
+								</li>
+								<li class="d-flex">
+									<span>Education:</span> <span>Bachelor of Engineering</span>
+								</li>
+								<li class="d-flex">
+									<span>Languages:</span>
+									<span>English, Hindi & Punjabi</span>
+								</li>
+								<li class="d-flex">
+									<span>EDA Tools:</span>
+									<span>KiCad, Altium Designer, EasyEDA & Proteus</span>
+								</li>
+								<li class="d-flex">
+									<span>Other Skills:</span>
+									<span>Fusion 360, Git, Technical Documentation, Project
+										Management</span>
+								</li>
+								<li class="d-flex">
+									<span>Interests:</span>
+									<span>Traveling, Photography, Bike Riding</span>
+								</li>
+							</ul>
 						</div>
+					</div>
 
-						<div class="counter-wrap ftco-animate d-flex mt-md-3">
-							<div class="text">
-								<p class="mb-4">
-									<span class="number" data-number="20">0</span>
-									<span></span> <span>&nbsp; Projects completed</span>
-								</p>
-
-								<p>
-									<a href="https://www.linkedin.com/in/sukhdarshan-vinayak-508601169/" target="_blank"
-										class="btn btn-primary py-3 px-3">LinkedIn</a>
-								</p>
-							</div>
+					<div class="counter-wrap ftco-animate d-flex mt-md-3">
+						<div class="text">
+							<p class="mb-4">
+								<span class="number" data-number="20">0</span>
+								<span>&nbsp; Projects Completed</span>
+							</p>
+							<p>
+								<a href="https://www.linkedin.com/in/sukhdarshan-vinayak-508601169/" target="_blank"
+									class="btn btn-primary py-3 px-3">LinkedIn</a>
+							</p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
+
 	<!-- End of About Me section ---------------------------------------------------------------------------------------------------------------------->
 
 	<!-- Start of Project section --------------------------------------------------------------------------------------------------------------------->
+	<!-- Projects Section -->
 	<section class="ftco-section" id="project-section">
 		<div class="container">
+			<!-- Heading -->
 			<div class="row justify-content-center mb-5 pb-5">
 				<div class="col-md-7 heading-section text-center ftco-animate">
 					<h1 class="big big-2">Projects</h1>
 					<h2 class="mb-4">Projects</h2>
-					<!-- <p>Below are the sample Data Analytics projects on SQL, Python, Power BI & ML. -->
+					<p class="text-muted">Some of my hardware and robotics projects.</p>
 				</div>
 			</div>
+
+			<!-- Project Grid -->
 			<div class="row d-flex">
+				<!-- Project Card -->
 				<div class="col-md-4 d-flex ftco-animate">
-					<div class="blog-entry justify-content-end">
+					<div class="blog-entry">
 						<a href="images/USB_Host1.jpg" class="block-20 zoom-effect image-popup"
-							style="background-image: url('images/USB_Host1.jpg')">
-						</a>
-						<div class="text mt-3 float-right d-block">
-							<h3 class="heading">
-								<!--<a href="https://github.com/rishabhnmishra/SQL_Music_Store_Analysis/blob/main/Music_Store_Query.sql"> </a> -->IOT
-								USB Drive
-							</h3>
+							style="background-image: url('images/USB_Host1.jpg')" aria-label="IOT USB Drive"></a>
+						<div class="text mt-3">
+							<h3 class="heading">IoT USB Drive</h3>
 							<p>
 								Capable of synchronizing files between trucks and a cloud
 								storage platform utilizing 4G LTE connectivity.
@@ -429,145 +421,125 @@
 						</div>
 					</div>
 				</div>
+
+				<!-- STAFFRON -->
 				<div class="col-md-4 d-flex ftco-animate">
-					<div class="blog-entry justify-content-end image-popup">
-						<a href="images/Ai_Acessv0.3.png" class="block-20 zoom-effect"
-							style="background-image: url('images/Ai_Acessv0.3.png')">
-						</a>
-						<div class="text mt-3 float-right d-block">
-							<h3 class="heading">
-								<!--<a href="https://github.com/rishabhnmishra/Python_Diwali_Sales_Analysis/blob/main/Diwali_Sales_Analysis.ipynb"> </a> -->STAFFRON
-							</h3>
+					<div class="blog-entry">
+						<a href="images/Ai_Acessv0.3.png" class="block-20 zoom-effect image-popup"
+							style="background-image: url('images/Ai_Acessv0.3.png')" aria-label="Staffron Device"></a>
+						<div class="text mt-3">
+							<h3 class="heading">STAFFRON</h3>
 							<p>
-								Advanced attendance management device incorporating facial
-								recognition technology and equipped with an ESP32-S3 and RFID
-								functionality.
+								Advanced attendance management device with facial recognition,
+								ESP32-S3, and RFID support.
 							</p>
 						</div>
 					</div>
 				</div>
+
+				<!-- Aquarium Controller -->
 				<div class="col-md-4 d-flex ftco-animate">
 					<div class="blog-entry">
 						<a href="images/Automatic_Aquarium_Control.png" class="block-20 zoom-effect image-popup" style="
                   background-image: url('images/Automatic_Aquarium_Control.png');
-                "></a>
-						<div class="text mt-3 float-right d-block">
-							<h3 class="heading">
-								<!--<a href="https://github.com/rishabhnmishra/Madhav_Store_Analysis_PowerBI/blob/main/Madhav%20Store%20dashboard.jpg"> </a> -->Automatic
-								Aquerium Controller
-							</h3>
+                " aria-label="Automatic Aquarium Controller"></a>
+						<div class="text mt-3">
+							<h3 class="heading">Automatic Aquarium Controller</h3>
 							<p>
-								Able to automate and control the aquarium environment
-								according to user-defined parameters and settings.
+								Automates and controls aquarium conditions according to
+								user-defined parameters.
 							</p>
 						</div>
 					</div>
 				</div>
+
+				<!-- iWiFi Switch -->
 				<div class="col-md-4 d-flex ftco-animate">
-					<div class="blog-entry justify-content-end">
+					<div class="blog-entry">
 						<a href="images/iWIFI Switch.png" class="block-20 zoom-effect image-popup"
-							style="background-image: url('images/iWIFI Switch.png')"></a>
-						<div class="text mt-3 float-right d-block">
-							<h3 class="heading">
-								<!--<a href="https://github.com/rishabhnmishra/sales_forecasting/tree/main"> </a> -->iWiFi
-								Switch
-							</h3>
+							style="background-image: url('images/iWIFI Switch.png')" aria-label="iWiFi Switch"></a>
+						<div class="text mt-3">
+							<h3 class="heading">iWiFi Switch</h3>
 							<p>
-								Empowered with the feature to switch on/off via a web-based
-								interface, enhancing remote accessibility and control for
-								seamless operation.
+								Web-controlled switch for seamless remote accessibility and
+								smart home integration.
 							</p>
 						</div>
 					</div>
 				</div>
+
+				<!-- iLED Chase -->
 				<div class="col-md-4 d-flex ftco-animate">
-					<div class="blog-entry justify-content-end">
+					<div class="blog-entry">
 						<a href="images/iLED Chase.jpg" class="block-20 zoom-effect image-popup"
-							style="background-image: url('images/iLED Chase.jpg')"></a>
-						<div class="text mt-3 float-right d-block">
-							<h3 class="heading">
-								<!--<a href="https://github.com/rishabhnmishra/customer_segmentation/blob/main/Customer_Segmentation-final.ipynb"> </a> -->iLED
-								Chase
-							</h3>
+							style="background-image: url('images/iLED Chase.jpg')" aria-label="iLED Chase"></a>
+						<div class="text mt-3">
+							<h3 class="heading">iLED Chase</h3>
 							<p>
-								Capable of controlling 32 independent LED strip lights through
-								motion detection, with the ability to generate 64 distinct
-								patterns.
+								Controls 32 LED strips via motion detection, generating up to
+								64 lighting patterns.
 							</p>
 						</div>
 					</div>
 				</div>
+
+				<!-- Shut The Box -->
 				<div class="col-md-4 d-flex ftco-animate">
 					<div class="blog-entry">
 						<a href="images/Shut The Box.png" class="block-20 zoom-effect image-popup"
-							style="background-image: url('images/Shut The Box.png')">
-						</a>
-						<div class="text mt-3 float-right d-block">
-							<h3 class="heading">
-								<!--<a href="https://github.com/rishabhnmishra/Madhav_Store_Analysis_PowerBI/blob/main/Madhav%20Store%20dashboard.jpg"> </a> -->Shut
-								The Box
-							</h3>
+							style="background-image: url('images/Shut The Box.png')" aria-label="Shut The Box Game"></a>
+						<div class="text mt-3">
+							<h3 class="heading">Shut The Box</h3>
 							<p>
-								This project uses YOLOv8 for dice detection, applies
-								arithmetic logic to validate moves, tracks available tiles
-								(1–9), and allows user interaction via webcam or image mode
-								with simple keyboard commands.
+								YOLOv8-powered dice detection game with arithmetic validation
+								and real-time tile tracking.
 							</p>
 						</div>
 					</div>
 				</div>
+
+				<!-- TurtleBot -->
 				<div class="col-md-4 d-flex ftco-animate">
 					<div class="blog-entry">
 						<a href="images/Turtle_Bot_Pic_1.jpg" class="block-20 zoom-effect image-popup"
-							style="background-image: url('images/Turtle_Bot_Pic_1.jpg')">
-						</a>
-						<div class="text mt-3 float-right d-block">
-							<h3 class="heading">
-								<!--<a href="https://github.com/rishabhnmishra/Madhav_Store_Analysis_PowerBI/blob/main/Madhav%20Store%20dashboard.jpg"> </a> -->Turtle
-								Bot
-							</h3>
+							style="background-image: url('images/Turtle_Bot_Pic_1.jpg')"
+							aria-label="TurtleBot Robot"></a>
+						<div class="text mt-3">
+							<h3 class="heading">TurtleBot</h3>
 							<p>
-								This project demonstrates autonomous robot navigation with
-								multi-goal selection, docking management, and real-time
-								feedback in ROS2.
+								Demonstrates autonomous robot navigation with multi-goal
+								selection, docking, and ROS2 feedback.
 							</p>
 						</div>
 					</div>
 				</div>
+
+				<!-- ABB Robotic Arm -->
 				<div class="col-md-4 d-flex ftco-animate">
 					<div class="blog-entry">
 						<a href="images/ABB_Pic.jpg" class="block-20 zoom-effect image-popup"
-							style="background-image: url('images/ABB_Pic.jpg')">
-						</a>
-						<div class="text mt-3 float-right d-block">
-							<h3 class="heading">
-								<!--<a href="https://github.com/rishabhnmishra/Madhav_Store_Analysis_PowerBI/blob/main/Madhav%20Store%20dashboard.jpg"> </a> -->Abb
-								Robotic Arm
-							</h3>
+							style="background-image: url('images/ABB_Pic.jpg')" aria-label="ABB Robotic Arm"></a>
+						<div class="text mt-3">
+							<h3 class="heading">ABB Robotic Arm</h3>
 							<p>
-								This project uses YOLOv8 for dice detection, applies
-								arithmetic logic to validate moves, tracks available tiles
-								(1–9), and allows user interaction via webcam or image mode
-								with simple keyboard commands.
+								YOLOv8-based project for object detection, arithmetic
+								validation, and robotic manipulation.
 							</p>
 						</div>
 					</div>
 				</div>
+
+				<!-- Conveyor Belt -->
 				<div class="col-md-4 d-flex ftco-animate">
 					<div class="blog-entry">
 						<a href="images/Convayer_belt.jpg" class="block-20 zoom-effect image-popup"
-							style="background-image: url('images/Convayer_belt.jpg')">
-						</a>
-						<div class="text mt-3 float-right d-block">
-							<h3 class="heading">
-								<!--<a href="https://github.com/rishabhnmishra/Madhav_Store_Analysis_PowerBI/blob/main/Madhav%20Store%20dashboard.jpg"> </a> -->Conveyor
-								Belt Positioning System
-							</h3>
+							style="background-image: url('images/Convayer_belt.jpg')"
+							aria-label="Conveyor Belt System"></a>
+						<div class="text mt-3">
+							<h3 class="heading">Conveyor Belt Positioning System</h3>
 							<p>
-								Developed a ROS2-driven conveyor belt automation system with
-								Raspberry Pi and Arduino, enabling real-time box detection
-								through sensor feedback and intelligent motor control for
-								efficient material handling.
+								ROS2-driven conveyor system with Raspberry Pi and Arduino for
+								real-time detection and smart motor control.
 							</p>
 						</div>
 					</div>
@@ -575,13 +547,16 @@
 			</div>
 		</div>
 	</section>
+
 	<!-- End of Project section ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
 
 	<!-- Achivement section --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
-	<section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
+	<!-- Counter Section -->
+	<section class="ftco-section ftco-counter img py-5" id="section-counter">
 		<div class="container">
-			<div class="row d-md-flex align-items-center">
-				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+			<div class="row d-md-flex align-items-center text-center">
+				<!-- Achievements -->
+				<div class="col-md-4 d-flex justify-content-center counter-wrap ftco-animate">
 					<div class="block-18">
 						<div class="text">
 							<strong class="number" data-number="30">0</strong>
@@ -589,7 +564,9 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+
+				<!-- Projects -->
+				<div class="col-md-4 d-flex justify-content-center counter-wrap ftco-animate">
 					<div class="block-18">
 						<div class="text">
 							<strong class="number" data-number="20">0</strong>
@@ -597,19 +574,20 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+
+				<!-- Coffee -->
+				<div class="col-md-4 d-flex justify-content-center counter-wrap ftco-animate">
 					<div class="block-18">
 						<div class="text">
 							<strong class="number" data-number="500">0</strong>
-							<span>Cups of coffee & tea</span>
+							<span>Cups of Coffee & Tea</span>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-	<br />
-	<br />
+
 	<!-- End of Achivements section ------------------------------------------------------------------------------------------------------------------------------------>
 
 	<!--Start of Dissertation section ---------------------------------------------------------------------------------------------------------------------------------->
@@ -727,10 +705,11 @@
 								collisions, and continued to the final destination.
 							</li>
 							<li>
-								Successfully demonstrated autonomous navigation driven solely by a CCTV camera,
-								eliminating the need for other onboard sensors. Click here
-								<a href="#Final_video" style="color: #008170; font-weight: bold">here
-								</a>to view the demo video.
+								Successfully demonstrated autonomous navigation driven solely
+								by a CCTV camera, eliminating the need for other onboard
+								sensors. Click here
+								<a href="#Final_video" style="color: #008170; font-weight: bold">here </a>to view the
+								demo video.
 							</li>
 						</ul>
 						<!-- Row 1: Two Images Side by Side -->
@@ -877,7 +856,9 @@
                       display: block;
                       margin-top: 8px;
                     ">
-									<source src="https://media.githubusercontent.com/media/sukhdarshan-sukhe/Portfolio/refs/heads/main/video/bandicam%202025-09-17%2020-50-30-249.mp4" type="video/mp4" />
+									<source
+										src="https://media.githubusercontent.com/media/sukhdarshan-sukhe/Portfolio/refs/heads/main/video/bandicam%202025-09-17%2020-50-30-249.mp4"
+										type="video/mp4" />
 									Your browser does not support the video tag.
 								</video>
 							</div>
@@ -987,7 +968,9 @@
                       display: block;
                       margin-top: 8px;
                     ">
-									<source src="https://media.githubusercontent.com/media/sukhdarshan-sukhe/Portfolio/refs/heads/main/video/Video1.mp4" type="video/mp4" />
+									<source
+										src="https://media.githubusercontent.com/media/sukhdarshan-sukhe/Portfolio/refs/heads/main/video/Video1.mp4"
+										type="video/mp4" />
 									Your browser does not support the video tag.
 								</video>
 							</div>
@@ -1035,7 +1018,9 @@
                       display: block;
                       margin-top: 8px;
                     ">
-									<source src="https://media.githubusercontent.com/media/sukhdarshan-sukhe/Portfolio/refs/heads/main/video/Video2.mp4" type="video/mp4" />
+									<source
+										src="https://media.githubusercontent.com/media/sukhdarshan-sukhe/Portfolio/refs/heads/main/video/Video2.mp4"
+										type="video/mp4" />
 									Your browser does not support the video tag.
 								</video>
 							</div>
@@ -1082,7 +1067,9 @@
                       display: block;
                       margin-top: 8px;
                     ">
-									<source src="https://media.githubusercontent.com/media/sukhdarshan-sukhe/Portfolio/refs/heads/main/video/Video3.mp4" type="video/mp4" />
+									<source
+										src="https://media.githubusercontent.com/media/sukhdarshan-sukhe/Portfolio/refs/heads/main/video/Video3.mp4"
+										type="video/mp4" />
 									Your browser does not support the video tag.
 								</video>
 							</div>
@@ -1130,7 +1117,9 @@
                       display: block;
                       margin-top: 8px;
                     ">
-									<source src="https://media.githubusercontent.com/media/sukhdarshan-sukhe/Portfolio/refs/heads/main/video/Video4.mp4" type="video/mp4" />
+									<source
+										src="https://media.githubusercontent.com/media/sukhdarshan-sukhe/Portfolio/refs/heads/main/video/Video4.mp4"
+										type="video/mp4" />
 									Your browser does not support the video tag.
 								</video>
 							</div>
@@ -1187,18 +1176,22 @@
                       font-weight: bold;
                       word-wrap: break-word;
                     ">
-									This flow diagram shows the complete pipeline of the project: Camera (CCTV) →
-									Raspberry Pi (TCP stream) → YOLO detection → Publish obstacles → Nav2 consumes
-									obstacles → TurtleBot3 replans path → Robot navigates safely. This flow diagram
-									explains how the Robotic Inversion system works from start to finish. The VF090
-									camera streams video through a Raspberry Pi 4B over TCP, which is processed by a
-									YOLO detection node to identify obstacles. Detected objects are converted into map
-									coordinates and published on the /camera/obstacles topic. Nav2 and RViz2
-									subscribes to this topic, updating the costmap in real time. The TurtleBot3 then
-									navigates to its goal using predefined or user-selected coordinates. If an obstacle
-									is detected in its planned path, Nav2 replans a new route around it; otherwise, the
-									robot continues to follow the original path until the destination is reached,
-									providing feedback on success.
+									This flow diagram shows the complete pipeline of the
+									project: Camera (CCTV) → Raspberry Pi (TCP stream) → YOLO
+									detection → Publish obstacles → Nav2 consumes obstacles →
+									TurtleBot3 replans path → Robot navigates safely. This flow
+									diagram explains how the Robotic Inversion system works from
+									start to finish. The VF090 camera streams video through a
+									Raspberry Pi 4B over TCP, which is processed by a YOLO
+									detection node to identify obstacles. Detected objects are
+									converted into map coordinates and published on the
+									/camera/obstacles topic. Nav2 and RViz2 subscribes to this
+									topic, updating the costmap in real time. The TurtleBot3
+									then navigates to its goal using predefined or user-selected
+									coordinates. If an obstacle is detected in its planned path,
+									Nav2 replans a new route around it; otherwise, the robot
+									continues to follow the original path until the destination
+									is reached, providing feedback on success.
 								</div>
 							</div>
 						</div>
@@ -1221,7 +1214,9 @@
                       display: block;
                       margin-top: 8px;
                     ">
-									<source src="https://media.githubusercontent.com/media/sukhdarshan-sukhe/Portfolio/refs/heads/main/video/Final_Video.mp4" type="video/mp4" type="video/mp4" />
+									<source
+										src="https://media.githubusercontent.com/media/sukhdarshan-sukhe/Portfolio/refs/heads/main/video/Final_Video.mp4"
+										type="video/mp4" type="video/mp4" />
 									Your browser does not support the video tag.
 								</video>
 							</div>
@@ -1247,19 +1242,21 @@
 	<!--Start of Resume section ------------------------------------------------------------------------------------------------------------------------>
 	<section class="ftco-section ftco-no-pb" id="resume-section">
 		<div class="container">
+			<!-- Heading -->
 			<div class="row justify-content-center pb-5">
 				<div class="col-md-10 heading-section text-center ftco-animate">
 					<h1 class="big big-2">Resume</h1>
 					<h2 class="mb-4">Resume</h2>
 					<p>
-						An Electronics Engineer with 2 years of experience driving
-						business strategies through data-driven insights. Proven expertise
-						in schematic capture, PCB desgining, troubleshooting, testing, and
+						Electronics Engineer with 2 years of experience driving business
+						strategies through data-driven insights. Proven expertise in
+						schematic capture, PCB designing, troubleshooting, testing, and
 						project management.
 					</p>
 				</div>
 			</div>
 
+			<!-- Experience Title -->
 			<div class="row">
 				<h1 class="big-4">Experience</h1>
 				<div class="underline"></div>
@@ -1267,96 +1264,103 @@
 			<br />
 
 			<div class="row">
+				<!-- Job 1 -->
 				<div class="col-md-6">
-					<div class="resume-wrap ftco-animate">
-						<span class="date">May 2022-Present</span>
-						<h2>Electronic Engineer</h2>
-						<span class="position"><a href="https://www.alfaintelli.tech/" target="_blank">Alfa
-								Intellitech</a></span>
-						<p class="mt-4">
-							Alfa Intellitech, is an IOT Developement Service Company, based
-							in Rajasthan, India. It is one of the leading companies in the
-							sector and has been growing ever since its inspection.
+					<div class="resume-wrap ftco-animate shadow-sm rounded p-4 mb-4">
+						<span class="date">May 2022 - Present</span>
+						<h2>Electronics Engineer</h2>
+						<span class="position">
+							<a href="https://www.alfaintelli.tech/" target="_blank">Alfa Intellitech</a>
+						</span>
+						<p class="mt-3">
+							Alfa Intellitech is an IoT development service company based in
+							Rajasthan, India. It is one of the leading companies in the
+							sector and has been growing ever since its inception.
 						</p>
-
 						<ul>
 							<li>
-								Analyzed PCBs, firmware, and customer feedback to identify
-								areas for improvement in the device.
+								Analyzed PCBs, firmware, and customer feedback to optimize
+								device performance.
 							</li>
 							<li>
-								Designed and developed IoT PCBs tailored to meet specific
-								customer requirements.
+								Designed and developed IoT PCBs tailored to client
+								requirements.
 							</li>
 							<li>
-								Designed and executed test cases, conducting rigorous testing
-								to ensure product reliability and quality
+								Created and executed rigorous test cases to ensure product
+								reliability.
 							</li>
 						</ul>
 					</div>
 				</div>
 
+				<!-- Job 2 -->
 				<div class="col-md-6">
-					<div class="resume-wrap ftco-animate">
+					<div class="resume-wrap ftco-animate shadow-sm rounded p-4 mb-4">
 						<span class="date">Aug 2021 - Feb 2022</span>
-						<h2>Front End Intern</h2>
-						<span class="position"><a href="https://www.newtonschool.co/" target="_blank">
-								Newton School
-							</a></span>
-						<p class="mt-4">
-							Newton School is an ed-tech platform that is building a
-							futuristic online university to provide a highly immersive and
-							interactive learning path to millions of students and enable
-							them to tap into new-age tech opportunities.
+						<h2>Frontend Intern</h2>
+						<span class="position">
+							<a href="https://www.newtonschool.co/" target="_blank">Newton School</a>
+						</span>
+						<p class="mt-3">
+							Newton School is an ed-tech platform building a futuristic
+							online university to provide immersive, interactive learning
+							experiences.
 						</p>
-
 						<ul>
 							<li>
-								Crafted a duplicate version of the Facebook Login Page
-								utilizing HTML and CSS.
+								Built a replica of the Facebook Login Page using HTML & CSS.
 							</li>
 							<li>
-								Developed a calculator application with functionality for
-								basic mathematical operations such as addition, subtraction,
-								multiplication, and division.
+								Developed a calculator for basic mathematical operations.
 							</li>
 							<li>
-								Created an age calculator application capable of determining
-								the age of the user.
+								Created an Age Calculator application for user interaction.
 							</li>
-						</ul>
-					</div>
-				</div>
-
-				<div class="container">
-					<div class="resume-wrap">
-						<span class="date">Jan 2021 - June 2021</span>
-						<h2>Cyber Security intern</h2>
-						<span class="position"><a href="https://cyberops.in/" target="_blank">
-								Cyberops Infosec LLP</a></span>
-						<p class="mt-4">
-							Cyberops functions as a unified agent solution aimed at
-							preventing data breaches, cyber attacks, mitigating ransomware
-							threats, and aiding in cybercrime investigations.
-						</p>
-
-						<ul>
-							<li>Performing cyber and technical threat analyses.</li>
-							<li>Discovering vulnerabilities in information systems.</li>
-							<li>
-								Analyzing security system logs, security tools, and data.
-							</li>
-							<li>Generate VAPT report</li>
 						</ul>
 					</div>
 				</div>
 			</div>
 
-			<br />
-			<br />
-			<!--End of Resume section ----------------------------------------------------------------------------------------------------------------->
+			<!-- Job 3 -->
+			<div class="row">
+				<div class="col-md-12">
+					<div class="resume-wrap ftco-animate shadow-sm rounded p-4 mb-4">
+						<span class="date">Jan 2021 - June 2021</span>
+						<h2>Cyber Security Intern</h2>
+						<span class="position">
+							<a href="https://cyberops.in/" target="_blank">Cyberops Infosec LLP</a>
+						</span>
+						<p class="mt-3">
+							Cyberops is a cybersecurity company providing solutions for
+							preventing data breaches, mitigating ransomware threats, and
+							supporting cybercrime investigations.
+						</p>
+						<ul>
+							<li>Performed cyber and technical threat analysis.</li>
+							<li>Discovered vulnerabilities in information systems.</li>
+							<li>
+								Analyzed system logs and security data using specialized
+								tools.
+							</li>
+							<li>
+								Generated VAPT (Vulnerability Assessment & Penetration
+								Testing) reports.
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
-			<!--Start of Education section ------------------------------------------------------------------------------------------------------------>
+	<!--End of Resume section ----------------------------------------------------------------------------------------------------------------->
+
+	<!--Start of Education section ------------------------------------------------------------------------------------------------------------>
+
+	<section class="ftco-section ftco-no-pb" id="education-section">
+		<div class="container">
+			<!-- Heading -->
 			<div class="row">
 				<h1 class="big-4">Education</h1>
 				<div class="underline"></div>
@@ -1364,182 +1368,223 @@
 			<br />
 
 			<div class="row">
+				<!-- Master's -->
 				<div class="col-md-6">
-					<div class="resume-wrap ftco-animate">
-						<span class="date">2024-Present</span>
-						<h2>Masters In Robotics</h2>
+					<div class="resume-wrap ftco-animate shadow-sm rounded p-4 mb-4">
+						<span class="date">2024 - Present</span>
+						<h2>Master’s in Robotics</h2>
 						<span class="position">Middlesex University, United Kingdom</span>
-						<p class="mt-4">CGPA: Still Unknown 😀</p>
+						<p class="mt-3">Currently pursuing. (Results pending 😄)</p>
 					</div>
 				</div>
 
+				<!-- Yoga Diploma -->
 				<div class="col-md-6">
-					<div class="resume-wrap ftco-animate">
-						<span class="date">2020-2021</span>
-						<h2>Diploma Certified Yoga Trainer</h2>
+					<div class="resume-wrap ftco-animate shadow-sm rounded p-4 mb-4">
+						<span class="date">2020 - 2021</span>
+						<h2>Diploma in Yoga Training</h2>
 						<span class="position">Skill India</span>
-						<p class="mt-4">CGPA: 8.21</p>
+						<p class="mt-3">CGPA: 8.21</p>
 					</div>
 				</div>
 
+				<!-- Bachelor's -->
 				<div class="col-md-6">
-					<div class="resume-wrap ftco-animate">
-						<span class="date">2017-2021</span>
-						<h2>Bachelor of Engineering</h2>
-						<span class="position">Global Institute Of Technology, India</span>
-						<p class="mt-4">CGPA: 6.75</p>
+					<div class="resume-wrap ftco-animate shadow-sm rounded p-4 mb-4">
+						<span class="date">2017 - 2021</span>
+						<h2>Bachelor of Engineering in Electronics & Communication</h2>
+						<span class="position">Global Institute of Technology, India</span>
+						<p class="mt-3">CGPA: 6.75</p>
 					</div>
 				</div>
 
+				<!-- Higher Secondary -->
 				<div class="col-md-6">
-					<div class="resume-wrap ftco-animate">
-						<span class="date">2015-2017</span>
-						<h2>Higher Secondary School</h2>
-						<span class="position">Prince Edu Hub, India</span>
-						<p class="mt-4">CGPA: 5.47</p>
+					<div class="resume-wrap ftco-animate shadow-sm rounded p-4 mb-4">
+						<span class="date">2015 - 2017</span>
+						<h2>Higher Secondary Education</h2>
+						<span class="position">Prince Education Hub, India</span>
+						<p class="mt-3">CGPA: 5.47</p>
 					</div>
 				</div>
 
+				<!-- Secondary School -->
 				<div class="col-md-6">
-					<div class="resume-wrap ftco-animate">
-						<span class="date">2013-2015</span>
+					<div class="resume-wrap ftco-animate shadow-sm rounded p-4 mb-4">
+						<span class="date">2013 - 2015</span>
 						<h2>Secondary School</h2>
 						<span class="position">Blooming Dales International School, India</span>
-						<p class="mt-4">CGPA: 8.00</p>
+						<p class="mt-3">CGPA: 8.00</p>
 					</div>
 				</div>
 			</div>
-
-			<!-- <div class="row justify-content-center mt-5"> -->
-			<!-- <div class="col-md-6 text-center ftco-animate"> -->
-			<!-- <p><a href="#" class="btn btn-primary py-4 px-5">Download CV</a> -->
-			<!-- </div> -->
-			<!-- </div> -->
 		</div>
 	</section>
-	<br />
+
 	<!--End of Education section -------------------------------------------------------------------------------------------------------------------->
 
 	<!-- Start of Contect Me section ------------------------------------------------------------------------------------------------------------------->
 	<section class="ftco-section contact-section ftco-no-pb" id="contact-section">
 		<div class="container">
+			<!-- Section Heading -->
 			<div class="row justify-content-center mb-5 pb-3">
-				<div class="col-md-7 heading-section text-center ftco-animate">
+				<div class="col-md-8 heading-section text-center ftco-animate">
 					<h1 class="big big-2">Contact</h1>
-					<h2 class="mb-4">Contact Me</h2>
-					<p>Below are the details to reach out to me!</p>
+					<h2 class="mb-4">Get in Touch</h2>
+					<p>
+						Feel free to reach out to me through any of the following
+						channels.
+					</p>
 				</div>
 			</div>
 
-			<div class="row d-flex contact-info mb-5">
+			<!-- Contact Info Cards -->
+			<div class="row d-flex contact-info mb-5 text-center">
+				<!-- Address -->
 				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
-					<div class="align-self-stretch box p-4 text-center">
-						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-map-signs"></span>
+					<div class="align-self-stretch box p-4 shadow-sm rounded">
+						<div class="icon d-flex align-items-center justify-content-center mb-3">
+							<span class="icon-map-signs" style="font-size: 1.8rem; color: #008170"></span>
 						</div>
-						<h3 class="mb-4">Address</h3>
+						<h3 class="mb-3">Address</h3>
 						<p>London, United Kingdom</p>
 					</div>
 				</div>
+
+				<!-- Phone -->
 				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
-					<div class="align-self-stretch box p-4 text-center">
-						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-phone2"></span>
+					<div class="align-self-stretch box p-4 shadow-sm rounded">
+						<div class="icon d-flex align-items-center justify-content-center mb-3">
+							<span class="icon-phone2" style="font-size: 1.8rem; color: #008170"></span>
 						</div>
-						<h3 class="mb-4">Contact Number</h3>
-						<p><a href="tel://+44 7741067249">+44 7741067249</a></p>
-					</div>
-				</div>
-				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
-					<div class="align-self-stretch box p-4 text-center">
-						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-paper-plane"></span>
-						</div>
-						<h3 class="mb-4">Email Address</h3>
+						<h3 class="mb-3">Phone</h3>
 						<p>
-							<a href="mailto:parasvinayak045@gmail.com">parasvinayak045@gmail.com</a>
+							<a href="tel:+447741067249" style="color: #333">+44 7741 067249</a>
 						</p>
 					</div>
 				</div>
+
+				<!-- Email -->
 				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
-					<div class="align-self-stretch box p-4 text-center">
-						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-globe"></span>
+					<div class="align-self-stretch box p-4 shadow-sm rounded">
+						<div class="icon d-flex align-items-center justify-content-center mb-3">
+							<span class="icon-paper-plane" style="font-size: 1.8rem; color: #008170"></span>
 						</div>
-						<h3 class="mb-4">Download Resume</h3>
-						<p><a href="Sukhdarshan_Electronics_Engineer.pdf">Resume</a></p>
+						<h3 class="mb-3">Email</h3>
+						<p>
+							<a href="mailto:parasvinayak045@gmail.com" style="color: #333">parasvinayak045@gmail.com</a>
+						</p>
 					</div>
 				</div>
 
-				<div class="container">
-					<br />
-					<br />
-					<div class="row justify-content-center">
-						<div class="col-md-7 ftco-animate text-center">
-							<h2>
-								Have a<span> Question? </span>
-								<a href="https://forms.gle/3SJTteXX2b7mEP8dA" target="_blank"
-									class="btn btn-primary py-3 px-5">Click Here</a>
-							</h2>
+				<!-- Resume -->
+				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
+					<div class="align-self-stretch box p-4 shadow-sm rounded">
+						<div class="icon d-flex align-items-center justify-content-center mb-3">
+							<span class="icon-file-text" style="font-size: 1.8rem; color: #008170"></span>
 						</div>
+						<h3 class="mb-3">Resume</h3>
+						<p>
+							<a href="Sukhdarshan_Electronics_Engineer.pdf" target="_blank"
+								style="color: #008170; font-weight: 600">
+								Download
+							</a>
+						</p>
 					</div>
-					<br />
+				</div>
+			</div>
+
+			<!-- Contact Form / Call to Action -->
+			<div class="row justify-content-center">
+				<div class="col-md-8 ftco-animate text-center">
+					<div class="d-flex flex-wrap justify-content-center " style="gap: 15px; margin-top: 20px; ">
+						<h2 class="mb-0" style="font-size: 2rem; font-weight: 600;">
+							Have a <span style="color: #008170;">Question? </span>
+						</h2>
+						<a href="https://forms.gle/3SJTteXX2b7mEP8dA" target="_blank" class="btn btn-primary py-3 px-4"
+							style="background-color: #008170; border: none; border-radius: 30px;">
+							Send a Message
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- Social Links -->
+			<div class="row justify-content-center mt-4">
+				<div class="col-md-8 text-center">
 					<ul class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0">
-						<li class="ftco-animate normal-txt">Find me on</li>
-						<li class="ftco-animate">
-							<a href="https://www.linkedin.com/in/sukhdarshan-vinayak-508601169/" target="_blank"><span
-									class="icon-linkedin"></span></a>
+						<li class="ftco-animate normal-txt mr-3">Connect with me:</li>
+						<li class="ftco-animate mx-2">
+							<a href="https://www.linkedin.com/in/sukhdarshan-vinayak-508601169/" target="_blank">
+								<span class="icon-linkedin"></span>
+							</a>
 						</li>
-						<li class="ftco-animate">
-							<a href="https://www.instagram.com/tkd_sukh_e/" target="_blank"><span
-									class="icon-instagram"></span></a>
+						<li class="ftco-animate mx-2">
+							<a href="https://www.instagram.com/tkd_sukh_e/" target="_blank">
+								<span class="icon-instagram"></span>
+							</a>
 						</li>
-						<li class="ftco-animate">
-							<a href="https://github.com/sukhdarshan-sukhe" target="_blank"><span
-									class="icon-github"></span></a>
+						<li class="ftco-animate mx-2">
+							<a href="https://github.com/sukhdarshan-sukhe" target="_blank">
+								<span class="icon-github"></span>
+							</a>
 						</li>
 					</ul>
-					<br />
 				</div>
 			</div>
 		</div>
 	</section>
-	<!--End of Contect Me section ------------------------------------------------------------------------------------------------------------------------------------>
 
+	<!--End of Contect Me section ------------------------------------------------------------------------------------------------------------------------------------>
 	<div id="ftco-loader" class="show fullscreen">
-		<svg class="circular" width="48px" height="48px">
-			<circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
-			<circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
-				stroke="#F96D00" />
+		<svg class="circular" width="60px" height="60px" viewBox="0 0 50 50">
+			<circle class="path-bg" cx="25" cy="25" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+			<circle class="path" cx="25" cy="25" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+				stroke="#008170" />
 		</svg>
 	</div>
+	<!-- Smooth Scroll Script -->
 	<script>
-		document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-			anchor.addEventListener("click", function (e) {
-				const target = document.querySelector(this.getAttribute("href"));
-				if (target) {
-					e.preventDefault();
-					target.scrollIntoView({ behavior: "smooth", block: "center" });
-					target.classList.add("highlight");
-					setTimeout(() => target.classList.remove("highlight"), 2000);
-				}
+		document.addEventListener("DOMContentLoaded", () => {
+			// Smooth scroll for internal links
+			document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+				anchor.addEventListener("click", function (e) {
+					const target = document.querySelector(this.getAttribute("href"));
+					if (target) {
+						e.preventDefault();
+						target.scrollIntoView({ behavior: "smooth", block: "center" });
+						target.classList.add("highlight");
+						setTimeout(() => target.classList.remove("highlight"), 2000);
+					}
+				});
+			});
+
+			// Hide loader after content load
+			const loader = document.getElementById("ftco-loader");
+			window.addEventListener("load", () => {
+				setTimeout(() => {
+					loader.classList.remove("show");
+					loader.classList.add("hide");
+				}, 500);
 			});
 		});
 	</script>
-	<script src="js/jquery.min.js"></script>
-	<script src="js/jquery-migrate-3.0.1.min.js"></script>
-	<script src="js/popper.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/jquery.easing.1.3.js"></script>
-	<script src="js/jquery.waypoints.min.js"></script>
-	<script src="js/jquery.stellar.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/jquery.magnific-popup.min.js"></script>
-	<script src="js/aos.js"></script>
-	<script src="js/jquery.animateNumber.min.js"></script>
-	<script src="js/scrollax.min.js"></script>
 
-	<script src="js/main.js"></script>
+	<!-- Required JS Libraries (optimized order) -->
+	<script src="js/jquery.min.js" defer></script>
+	<script src="js/jquery-migrate-3.0.1.min.js" defer></script>
+	<script src="js/popper.min.js" defer></script>
+	<script src="js/bootstrap.min.js" defer></script>
+	<script src="js/jquery.easing.1.3.js" defer></script>
+	<script src="js/jquery.waypoints.min.js" defer></script>
+	<script src="js/jquery.stellar.min.js" defer></script>
+	<script src="js/owl.carousel.min.js" defer></script>
+	<script src="js/jquery.magnific-popup.min.js" defer></script>
+	<script src="js/aos.js" defer></script>
+	<script src="js/jquery.animateNumber.min.js" defer></script>
+	<script src="js/scrollax.min.js" defer></script>
+	<script src="js/main.js" defer></script>
+
 </body>
 
 </html>
